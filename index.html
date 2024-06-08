@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="../css/tailwind.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="bg-gray-800 p-4 text-white">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl">Shopping Cart</h1>
+        <div class="flex space-x-4">
+          <a href="index.html" class="hover:underline">Home</a>
+          <a href="cart.html" class="hover:underline">Cart</a>
+          <a href="orders.html" class="hover:underline">Orders</a>
+          <a href="profile.html" class="hover:underline">Profile</a>
+          <a href="admin.html" class="hover:underline">Admin</a>
+          <a href="login.html" class="hover:underline">Login</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header
+      class="bg-gray-800 text-white py-36 bg-cover bg-center"
+      style="background-image: url('../img/phone.jpg')"
+    >
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-4">Welcome to Our Shopping Cart</h2>
+        <p class="text-xl mb-8">
+          Experience the best online shopping with us. Explore a wide range of
+          products and enjoy seamless shopping.
+        </p>
+        <a href="#product-list" class="bg-white text-gray-700 py-2 px-4 rounded"
+          >Shop Now</a
+        >
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto mt-8">
+      <!-- Search Bar -->
+      <div class="flex justify-center mt-8 mb-8">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search for products by name"
+          class="w-full sm:w-1/2 p-2 border border-gray-300 rounded"
+        />
+        <button
+          class="bg-gray-800 text-white py-2 px-4 rounded ml-2"
+          onclick="searchProducts()"
+        >
+          Search
+        </button>
+      </div>
+
+      <!-- Featured Products -->
+      <section>
+        <h3 class="text-3xl font-bold my-8 text-center">Featured Products</h3>
+        <div
+          id="product-list"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+        >
+          <!-- Products will be dynamically loaded here -->
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-8">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2024 Shopping Cart. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/models/Product.js"></script>
+    <script src="../js/models/Cart.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

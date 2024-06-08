@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../css/tailwind.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="bg-gray-800 p-4 text-white">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl">Shopping Cart</h1>
+        <div class="flex space-x-4">
+          <a href="index.html" class="hover:underline">Home</a>
+          <a href="login.html" class="hover:underline">Login</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div
+      class="container mx-auto mt-4 w-96 border border-slate-800 rounded-lg p-6 justify-center align-baseline"
+    >
+      <h2 class="text-4xl mb-4">Sign Up</h2>
+      <form id="signup-form" class="bg-center">
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700">Name</label>
+          <input
+            type="text"
+            id="name"
+            class="w-full p-2 border border-gray-300 rounded"
+            required
+            placeholder="John Doe"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700">Email</label>
+          <input
+            type="email"
+            id="email"
+            class="w-full p-2 border border-gray-300 rounded"
+            required
+            placeholder="xyz@gmail.com"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="password" class="block text-gray-700">Password</label>
+          <input
+            type="password"
+            id="password"
+            class="w-full p-2 border border-gray-300 rounded"
+            required
+            placeholder="********"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="payment-method" class="block text-gray-700"
+            >Payment Method</label
+          >
+          <select
+            id="payment-method"
+            class="w-full p-2 border border-gray-300 rounded"
+            required
+          >
+            <option value="debit-card">Debit Card</option>
+            <option value="digital-wallet">PayPal</option>
+          </select>
+        </div>
+        <div id="debit-card-fields" class="payment-fields mb-4">
+          <div class="mb-4">
+            <label for="card-number" class="block text-gray-700"
+              >Card Number</label
+            >
+            <input
+              type="text"
+              id="card-number"
+              class="w-full p-2 border border-gray-300 rounded"
+              required
+              placeholder="1234 1234 1234 1234"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="expiration-date" class="block text-gray-700"
+              >Expiration Date</label
+            >
+            <input
+              type="text"
+              id="expiration-date"
+              class="w-full p-2 border border-gray-300 rounded"
+              required
+              placeholder="MM/YY"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="cvv" class="block text-gray-700">CVV</label>
+            <input
+              type="text"
+              id="cvv"
+              class="w-full p-2 border border-gray-300 rounded"
+              required
+              placeholder="000"
+            />
+          </div>
+        </div>
+        <div id="digital-wallet-fields" class="payment-fields mb-4 hidden">
+          <div class="mb-4">
+            <label for="paypal-email" class="block text-gray-700"
+              >PayPal Email</label
+            >
+            <input
+              type="email"
+              id="paypal-email"
+              class="w-full p-2 border border-gray-300 rounded"
+              required
+              placeholder="xyz@gmail.com"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="paypal-password" class="block text-gray-700"
+              >PayPal Password</label
+            >
+            <input
+              type="password"
+              id="paypal-password"
+              class="w-full p-2 border border-gray-300 rounded"
+              required
+              placeholder="********"
+            />
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="account-balance" class="block text-gray-700"
+            >Account Balance</label
+          >
+          <input
+            type="number"
+            id="account-balance"
+            class="w-full p-2 border border-gray-300 rounded"
+            required
+            placeholder="1000$"
+          />
+        </div>
+        <button type="submit" class="bg-gray-800 text-white py-2 px-4 rounded">
+          Sign Up
+        </button>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-2 mt-8">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2024 Shopping Cart. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts in signup.html and login.html -->
+    <script src="../js/models/Payment.js"></script>
+    <script src="../js/models/User.js"></script>
+    <script src="../js/auth.js"></script>
+  </body>
+</html>

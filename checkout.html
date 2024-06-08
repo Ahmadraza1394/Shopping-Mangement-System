@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../css/tailwind.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="bg-gray-800 p-4 text-white">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl">Shopping Cart</h1>
+        <div class="flex space-x-16 ml-96">
+          <a href="index.html" class="hover:underline ms-10">Home</a>
+        </div>
+        <div id="user-balance" class="ml-auto text-lg"></div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto mt-8">
+      <h2 class="text-2xl mb-4">Checkout</h2>
+      <div id="empty-cart-message" class="text-red-500 mb-4 hidden">
+        There is nothing in your cart. Select items from the
+        <a href="index.html" class="text-blue-500">product page</a>.
+      </div>
+      <form id="checkout-form" class="hidden">
+        <div class="mb-4">
+          <label for="payment-method" class="block text-gray-700"
+            >Payment Method</label
+          >
+          <select
+            id="payment-method"
+            class="w-full p-2 border border-gray-300 rounded"
+          >
+            <option value="account-balance">Account Balance</option>
+            <option value="debit-card">Debit Card</option>
+            <option value="digital-wallet">PayPal</option>
+          </select>
+        </div>
+        <div id="account-balance-fields" class="payment-fields mb-4">
+          <p class="text-green-600">You will pay with your account balance.</p>
+        </div>
+        <div id="debit-card-fields" class="payment-fields mb-4 hidden">
+          <div class="mb-4">
+            <label for="card-number" class="block text-gray-700"
+              >Card Number</label
+            >
+            <input
+              type="text"
+              id="card-number"
+              class="w-full p-2 border border-gray-300 rounded"
+              placeholder="1234 1234 1234 1234"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="expiration-date" class="block text-gray-700"
+              >Expiration Date</label
+            >
+            <input
+              type="text"
+              id="expiration-date"
+              class="w-full p-2 border border-gray-300 rounded"
+              placeholder="MM/YY"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="cvv" class="block text-gray-700">CVV</label>
+            <input
+              type="text"
+              id="cvv"
+              class="w-full p-2 border border-gray-300 rounded"
+              placeholder="000"
+            />
+          </div>
+        </div>
+        <div id="digital-wallet-fields" class="payment-fields mb-4 hidden">
+          <div class="mb-4">
+            <label for="paypal-email" class="block text-gray-700"
+              >PayPal Email</label
+            >
+            <input
+              type="email"
+              id="paypal-email"
+              class="w-full p-2 border border-gray-300 rounded"
+              placeholder="abc@gmail.com"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="paypal-password" class="block text-gray-700"
+              >PayPal Password</label
+            >
+            <input
+              type="password"
+              id="paypal-password"
+              class="w-full p-2 border border-gray-300 rounded"
+              placeholder="********"
+            />
+          </div>
+        </div>
+        <button type="submit" class="bg-green-500 text-white py-2 px-4 rounded">
+          Pay Now
+        </button>
+      </form>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/models/Product.js"></script>
+    <script src="../js/models/Cart.js"></script>
+    <script src="../js/models/User.js"></script>
+    <script src="../js/models/Order.js"></script>
+    <script src="../js/models/Payment.js"></script>
+    <script src="../js/checkout.js"></script>
+    <script src="./js/models/Sale.js"></script>
+  </body>
+</html>

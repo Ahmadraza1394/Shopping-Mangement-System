@@ -1,0 +1,53 @@
+/* Custom styles for the shopping cart */
+
+body {
+  font-family: "Arial", sans-serif;
+}
+
+.navbar {
+  background-color: #4a5568; /* Tailwind color gray-800 */
+  color: white;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar div a {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Popup Message */
+.popup-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #15ce40; /* Tailwind color gray-800 */
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem; /* Tailwind rounded-lg */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.popup-message.show {
+  opacity: 1;
+}
